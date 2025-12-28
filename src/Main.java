@@ -1,27 +1,30 @@
-public class Main {
+import java.util.List;
+public class Main{
     public static void main(String[] args) {
-        Animal x = new Animal("Lion", "Big Cat", 1);
-        Animal y= new Animal("Tiger", "Big Cat", 2);
-        Animal z = new Animal("Wolf", "Canine", 3);
 
-        System.out.println(x);
-        System.out.println(y);
-        System.out.println(z);
+        Animal lion = new Mammal("Lion", "Big Cat", 5, false);
+        Animal tiger = new Mammal("Tiger", "Big Cat", 3, false);
+        Animal wolf = new Mammal("Wolf", "Canine", 4, false);
 
-        Zoo x1 = new Zoo("Lion", "Zoo", 100);
-        Zoo y2= new Zoo("Tiger", "Zoo", 200);
-        Zoo z3= new Zoo("Wolf", "Zoo", 90);
-
-        System.out.println(x1);
-        System.out.println(y2);
-        System.out.println(z3);
-
-        Zookeeper v1 = new Zookeeper("Ali", 30, "Morning");
-        Zookeeper v2 = new Zookeeper("Aisha", 25, "Evening");
-
-        System.out.println(v1);
-        System.out.println(v2);
+        Zoo myZoo = new Zoo("Central Zoo", "City Park");
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(tiger);
+        myZoo.addAnimal(wolf);
 
 
+        System.out.println(myZoo);
+
+        List<Animal> bigCats = myZoo.getAnimalsBySpecies("Big Cat");
+        System.out.println("Big Cats in the Zoo:" + bigCats);
+
+        List<Animal> sortedAnimals = myZoo.getAnimalsSortedByAge();
+        System.out.println("Animals sorted by age:" + sortedAnimals);
+
+
+        Zookeeper z1 = new Zookeeper("Ali", 30, "Morning");
+        Zookeeper z2 = new Zookeeper("Aisha", 25, "Evening");
+
+        System.out.println(z1);
+        System.out.println(z2);
     }
 }

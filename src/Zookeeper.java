@@ -3,25 +3,22 @@ public class Zookeeper {
     private int age;
     private String shift;
 
-    public Zookeeper(String name, int age, String shift) {
+    public Zookeeper(String name,int age,String shift) {
         this.name = name;
         this.age = age;
         this.shift = shift;
     }
-
     public String getName() {
         return name;
     }
-
     public int getAge() {
         return age;
     }
-
     public String getShift() {
         return shift;
     }
-
+    @Override
     public String toString() {
-        return "Zookeeper: " + name + ", age: " + age + ", shift: " + shift;
+        return "Zookeeper:"+name+",age:"+age+",shift:"+shift;
     }
 }
